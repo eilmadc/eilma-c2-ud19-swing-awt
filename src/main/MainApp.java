@@ -28,7 +28,7 @@ public class MainApp {
 	public static void main(String[] args) {
 		// TODO: hacer Switch case control Ejercicio 1 a 5
 		// Muestra el menu mediante poantalla y dialog
-		utils.mostrarPrograma("UNIDAD 10 : JAVA EXCEPTIONS");
+		utils.mostrarPrograma("UNIDAD 19 : SWING-AWT");
 		imprimeMenuPrincipal();
 	}
 
