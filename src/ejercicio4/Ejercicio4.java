@@ -40,6 +40,7 @@ public class Ejercicio4 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		//LABEL CALCULADORA
 		JLabel lblTitulo = new JLabel("CALCULADORA");
 		lblTitulo.setBounds(73, 58, 146, 27);
 		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 22));
@@ -72,7 +73,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn01.getText();
 				}
-				textField.setText(" " + btn01.getText() + " ");
+				textField.setText(textField.getText()+ btn01.getText());
 			}
 		});
 
@@ -92,7 +93,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn02.getText();
 				}
-				textField.setText(" " + btn02.getText() + " ");
+				textField.setText(textField.getText()+ btn02.getText());
 			}
 		});
 
@@ -113,7 +114,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn03.getText();
 				}
-				textField.setText(" " + btn03.getText() + " ");
+				textField.setText(textField.getText()+ btn03.getText());
 			}
 		});
 
@@ -130,12 +131,13 @@ public class Ejercicio4 extends JFrame {
 		btnsuma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (operador == "+") {
+					setOperando2(textField.getText());
 					daResultado();
-					operador = btnsuma.getText();
 				}else {
+					setOperando1(textField.getText());
 					operador = btnsuma.getText();
 				}
-				textField.setText(" " + btnsuma.getText() + " ");
+				textField.setText(btnsuma.getText());
 			}
 		});
 
@@ -156,7 +158,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn04.getText();
 				}
-				textField.setText(" " + btn04.getText() + " ");
+				textField.setText(textField.getText()+ btn04.getText());
 			}
 		});
 
@@ -176,7 +178,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn05.getText();
 				}
-				textField.setText(" " + btn05.getText() + " ");
+				textField.setText(textField.getText()+ btn05.getText());
 			}
 		});
 
@@ -197,7 +199,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn06.getText();
 				}
-				textField.setText(" " + btn06.getText() + " ");
+				textField.setText(textField.getText()+ btn06.getText());
 			}
 		});
 
@@ -206,8 +208,14 @@ public class Ejercicio4 extends JFrame {
 		btnResta.setBackground(new Color(248, 215, 152));
 		btnResta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				operador = "-";
-				textField.setText(" " + operador + " ");
+				if (operador == "-") {
+					setOperando2(textField.getText());
+					daResultado();
+				}else {
+					setOperando1(textField.getText());
+					operador = btnResta.getText();
+				}
+				textField.setText(btnResta.getText());
 			}
 		});
 		btnResta.setFont(new Font("Tahoma", Font.PLAIN, 30));
@@ -235,7 +243,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn07.getText();
 				}
-				textField.setText(" " + btn07.getText() + " ");
+				textField.setText(textField.getText()+ btn07.getText());
 			}
 		});
 
@@ -256,7 +264,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn08.getText();
 				}
-				textField.setText(" " + btn08.getText() + " ");
+				textField.setText(textField.getText()+ btn08.getText());
 			}
 		});
 
@@ -276,7 +284,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn09.getText();
 				}
-				textField.setText(" " + btn09.getText() + " ");
+				textField.setText(textField.getText()+ btn09.getText());
 			}
 		});
 		panel.add(btn09, gbc_btn09);
@@ -293,7 +301,14 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btnMultiplica, gbc_btnMultiplica);
 		btnMultiplica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText(" " + btnMultiplica.getText() + " ");
+				if (operador == "*") {
+					setOperando2(textField.getText());
+					daResultado();
+				}else {
+					setOperando1(textField.getText());
+					operador = btnMultiplica.getText();
+				}
+				textField.setText(btnMultiplica.getText());
 			}
 		});
 
@@ -329,7 +344,7 @@ public class Ejercicio4 extends JFrame {
 				} else {
 					operando2 = btn0.getText();
 				}
-				textField.setText(" " + btn0.getText() + " ");
+				textField.setText(textField.getText()+ btn0.getText());
 			}
 		});
 
@@ -344,8 +359,9 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btnIgual, gbc_btnIgual);
 		btnIgual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText(" " + btnIgual.getText() + " ");
-				textField.setText(" " + daResultado() + " ");
+				setOperando2(textField.getText());
+				textField.setText(btnIgual.getText());
+				textField.setText(daResultado());
 			}
 		});
 
@@ -359,10 +375,24 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btnDivide, gbc_btnDivide);
 		btnDivide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText(" " + btnDivide.getText() + " ");
+				if (operador == "/") {
+					System.out.println(textField.getText());
+					setOperando2(textField.getText());
+					daResultado();
+				}else {
+					System.out.println("en divide:"+textField.getText());
+					setOperando1(textField.getText());
+					operador = btnDivide.getText();
+					textField.setText("");
+					textField.setText(operador);
+				}
+				
 			}
 		});
 
+	/**
+	 * Campo de resultados
+	 */
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.RIGHT);
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -376,8 +406,16 @@ public class Ejercicio4 extends JFrame {
 		operando1 = "0";
 		operando2 = "0";
 		operador = "";
+		textField.setText("");
 	}
 
+	public void setOperando1(String op1) {
+		this.operando1 = op1 ;
+	}
+	
+	public void setOperando2(String op2) {
+		this.operando2 = op2 ;
+	}
 	/**
 	 * SUMA
 	 * 
@@ -423,7 +461,9 @@ public class Ejercicio4 extends JFrame {
 	}
 
 	public String daResultado() {
-		System.out.println(operando1 +" "+ operando2 + " "+ operador);
+		System.out.println(operando2);
+		System.out.println(operando1+operador+operando2 );
+		
 		Double op1 = Double.parseDouble(operando1);
 		Double op2 = Double.parseDouble(operando2);
 
@@ -447,6 +487,7 @@ public class Ejercicio4 extends JFrame {
 		}
 
 		resultado = String.valueOf(rs);
+		System.out.println(resultado);
 		return resultado;
 	}
 }
