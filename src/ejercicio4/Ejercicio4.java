@@ -68,7 +68,7 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btn01, gbc_btn01);
 		btn01.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ((operando1) == "0") {
+				if (operando1 == "0") {
 					operando1 = btn01.getText();
 				} else {
 					operando2 = btn01.getText();
@@ -109,12 +109,17 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btn03, gbc_btn03);
 		btn03.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ((operando1) == "0") {
+				if (operando1 == "0") {
 					operando1 = btn03.getText();
-				} else {
+					textField.setText(textField.getText()+ btn03.getText());
+				} else if(operando2 =="0"){
 					operando2 = btn03.getText();
+					textField.setText(btn03.getText());
+				}else {
+					operando2 = btn03.getText();
+					textField.setText(textField.getText()+ btn03.getText());
 				}
-				textField.setText(textField.getText()+ btn03.getText());
+				
 			}
 		});
 
@@ -133,7 +138,7 @@ public class Ejercicio4 extends JFrame {
 				if (operador == "+") {
 					setOperando2(textField.getText());
 					daResultado();
-				}else {
+				} else {
 					setOperando1(textField.getText());
 					operador = btnsuma.getText();
 				}
@@ -361,6 +366,7 @@ public class Ejercicio4 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				setOperando2(textField.getText());
 				textField.setText(btnIgual.getText());
+				textField.setText("");
 				textField.setText(daResultado());
 			}
 		});
@@ -462,7 +468,7 @@ public class Ejercicio4 extends JFrame {
 
 	public String daResultado() {
 		System.out.println(operando2);
-		System.out.println(operando1+operador+operando2 );
+		//System.out.println(operando1+operador+operando2 );
 		
 		Double op1 = Double.parseDouble(operando1);
 		Double op2 = Double.parseDouble(operando2);
@@ -474,7 +480,7 @@ public class Ejercicio4 extends JFrame {
 			rs = suma(op1, op2);
 			break;
 		case "-":
-			resta(op1, op2);
+			rs=resta(op1, op2);
 			break;
 		case "*":
 			rs = multiplica(op1, op2);
