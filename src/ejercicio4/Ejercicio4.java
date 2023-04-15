@@ -32,6 +32,7 @@ public class Ejercicio4 extends JFrame {
 	 * Create the frame.
 	 */
 	public Ejercicio4() {
+		setTitle("UD19: Ejercicio4 - CALCULADORA");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 309, 427);
 		contentPane = new JPanel();
@@ -70,10 +71,14 @@ public class Ejercicio4 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (operando1 == "0") {
 					operando1 = btn01.getText();
-				} else {
+					textField.setText(textField.getText()+ btn01.getText());
+				} else if(operando2 =="0"){
 					operando2 = btn01.getText();
+					textField.setText(btn01.getText());
+				}else {
+					operando2 = btn01.getText();
+					textField.setText(textField.getText()+ btn01.getText());
 				}
-				textField.setText(textField.getText()+ btn01.getText());
 			}
 		});
 
@@ -88,12 +93,16 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btn02, gbc_btn02);
 		btn02.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ((operando1) == "0") {
+				if (operando1 == "0") {
 					operando1 = btn02.getText();
-				} else {
+					textField.setText(textField.getText()+ btn02.getText());
+				} else if(operando2 =="0"){
 					operando2 = btn02.getText();
+					textField.setText(btn02.getText());
+				}else {
+					operando2 = btn02.getText();
+					textField.setText(textField.getText()+ btn02.getText());
 				}
-				textField.setText(textField.getText()+ btn02.getText());
 			}
 		});
 
@@ -158,12 +167,16 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btn04, gbc_btn04);
 		btn04.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ((operando1) == "0") {
+				if (operando1 == "0") {
 					operando1 = btn04.getText();
-				} else {
+					textField.setText(textField.getText()+ btn04.getText());
+				} else if(operando2 =="0"){
 					operando2 = btn04.getText();
+					textField.setText(btn04.getText());
+				}else {
+					operando2 = btn04.getText();
+					textField.setText(textField.getText()+ btn04.getText());
 				}
-				textField.setText(textField.getText()+ btn04.getText());
 			}
 		});
 
@@ -178,12 +191,16 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btn05, gbc_btn05);
 		btn05.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ((operando1) == "0") {
+				if (operando1 == "0") {
 					operando1 = btn05.getText();
-				} else {
+					textField.setText(textField.getText()+ btn05.getText());
+				} else if(operando2 =="0"){
 					operando2 = btn05.getText();
+					textField.setText(btn05.getText());
+				}else {
+					operando2 = btn05.getText();
+					textField.setText(textField.getText()+ btn05.getText());
 				}
-				textField.setText(textField.getText()+ btn05.getText());
 			}
 		});
 
@@ -199,12 +216,16 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btn06, gbc_btn06);
 		btn06.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ((operando1) == "0") {
+				if (operando1 == "0") {
 					operando1 = btn06.getText();
-				} else {
+					textField.setText(textField.getText()+ btn06.getText());
+				} else if(operando2 =="0"){
+					operando2 = btn03.getText();
+					textField.setText(btn06.getText());
+				}else {
 					operando2 = btn06.getText();
+					textField.setText(textField.getText()+ btn06.getText());
 				}
-				textField.setText(textField.getText()+ btn06.getText());
 			}
 		});
 
@@ -243,12 +264,16 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btn07, gbc_btn07);
 		btn07.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ((operando1) == "0") {
+				if (operando1 == "0") {
 					operando1 = btn07.getText();
-				} else {
+					textField.setText(textField.getText()+ btn07.getText());
+				} else if(operando2 =="0"){
 					operando2 = btn07.getText();
+					textField.setText(btn07.getText());
+				}else {
+					operando2 = btn07.getText();
+					textField.setText(textField.getText()+ btn07.getText());
 				}
-				textField.setText(textField.getText()+ btn07.getText());
 			}
 		});
 
@@ -266,10 +291,14 @@ public class Ejercicio4 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (operando1 == "0") {
 					operando1 = btn08.getText();
-				} else {
+					textField.setText(textField.getText()+ btn08.getText());
+				} else if(operando2 =="0"){
 					operando2 = btn08.getText();
+					textField.setText(btn08.getText());
+				}else {
+					operando2 = btn08.getText();
+					textField.setText(textField.getText()+ btn08.getText());
 				}
-				textField.setText(textField.getText()+ btn08.getText());
 			}
 		});
 
@@ -284,12 +313,16 @@ public class Ejercicio4 extends JFrame {
 		gbc_btn09.gridy = 2;
 		btn09.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ((operando1) == "0") {
+				if (operando1 == "0") {
 					operando1 = btn09.getText();
-				} else {
+					textField.setText(textField.getText()+ btn09.getText());
+				} else if(operando2 =="0"){
 					operando2 = btn09.getText();
+					textField.setText(btn09.getText());
+				}else {
+					operando2 = btn09.getText();
+					textField.setText(textField.getText()+ btn09.getText());
 				}
-				textField.setText(textField.getText()+ btn09.getText());
 			}
 		});
 		panel.add(btn09, gbc_btn09);
@@ -344,12 +377,16 @@ public class Ejercicio4 extends JFrame {
 		panel.add(btn0, gbc_btn0);
 		btn0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if ((operando1) == "0") {
+				if (operando1 == "0") {
 					operando1 = btn0.getText();
-				} else {
+					textField.setText(textField.getText()+ btn0.getText());
+				} else if(operando2 =="0"){
 					operando2 = btn0.getText();
+					textField.setText(btn0.getText());
+				}else {
+					operando2 = btn0.getText();
+					textField.setText(textField.getText()+ btn0.getText());
 				}
-				textField.setText(textField.getText()+ btn0.getText());
 			}
 		});
 
